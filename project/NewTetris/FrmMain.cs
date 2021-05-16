@@ -7,7 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace NewTetris {
@@ -20,14 +20,17 @@ namespace NewTetris {
       game = new Game();
       Game.field = lblPlayingField;
       game.NextShape();
+      Game.curShape = Game.nextShape;
+      Game.nextShape = null;
     }
 
     private void tmrCurrentPieceFall_Tick(object sender, EventArgs e) {
       if (Game.curShape != null) {
         if (!Game.curShape.TryMoveDown()) {
           Game.curShape.DissolveIntoField();
-          Game.curShape = null;
           game.NextShape();
+          Game.curShape = Game.nextShape;
+          
         }
       }
     }
@@ -38,6 +41,17 @@ namespace NewTetris {
       }
       else if (e.KeyCode == Keys.Right) {
         Game.curShape.TryMoveRight();
+      }
+      else if (e.KeyCode == Keys.Up)
+      {
+        while (Game.curShape.TryMoveDown() == true)
+        {
+            Game.curShape.TryMoveDown();
+        }
+      }
+
+      else if (e.KeyCode == Keys.Down){
+        Game.curShape.TryMoveDown();
       }
       else if (e.KeyCode == Keys.Z) {
         Game.curShape.RotateCCW();
