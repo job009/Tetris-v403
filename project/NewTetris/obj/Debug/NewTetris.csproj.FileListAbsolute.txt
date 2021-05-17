@@ -1,0 +1,5 @@
+E:\Users\jonmi\Documents\School\SPRING_2021\CSC 403\Scrum Project\III\NewTetris\project\NewTetris\obj\Debug\NewTetris.csprojAssemblyReference.cache
+E:\Users\jonmi\Documents\School\SPRING_2021\CSC 403\Scrum Project\III\NewTetris\project\NewTetris\obj\Debug\NewTetris.FrmMain.resources
+E:\Users\jonmi\Documents\School\SPRING_2021\CSC 403\Scrum Project\III\NewTetris\project\NewTetris\obj\Debug\NewTetris.Properties.Resources.resources
+E:\Users\jonmi\Documents\School\SPRING_2021\CSC 403\Scrum Project\III\NewTetris\project\NewTetris\obj\Debug\NewTetris.csproj.GenerateResource.cache
+E:\Users\jonmi\Documents\School\SPRING_2021\CSC 403\Scrum Project\III\NewTetris\project\NewTetris\obj\Debug\NewTetris.csproj.CoreCompileInputs.cache

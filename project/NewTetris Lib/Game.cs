@@ -34,11 +34,25 @@ namespace NewTetris_Lib {
     /// </summary>
     public static Shape curShape;
 
+
+    /// <summary>
+    /// Next shape to be displayed in the side field
+    /// and played after the current piece is placed
+    /// </summary>
+    public static Shape nextShape;
+
     /// <summary>
     /// Link to widget displaying the playing field. 
     /// Used to place pieces and shapes inside of it.
     /// </summary>
     public static Control field;
+
+
+    /// <summary>
+    /// Link to widget displaying the playing field. 
+    /// Used to place pieces and shapes inside of it.
+    /// </summary>
+    public static Control next;
 
     /// <summary>
     /// Holds the image for a piece that is used to 
@@ -54,6 +68,7 @@ namespace NewTetris_Lib {
     public Game() {
       random = new Random();
       curShape = null;
+      nextShape = null;
     }
 
     /// <summary>
@@ -63,6 +78,7 @@ namespace NewTetris_Lib {
       int shapeNum = random.Next(7);
       ShapeType shapeType = (ShapeType)shapeNum;
       curShape = ShapeFactory.MakeShape(shapeType);
+      nextShape = ShapeFactory.MakeShape(shapeType);
     }
   }
 }

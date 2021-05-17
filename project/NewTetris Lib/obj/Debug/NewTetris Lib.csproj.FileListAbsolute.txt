@@ -1,0 +1,6 @@
+E:\Users\jonmi\Documents\School\SPRING_2021\CSC 403\Scrum Project\III\NewTetris\project\NewTetris Lib\bin\Debug\NewTetris Lib.xml
+E:\Users\jonmi\Documents\School\SPRING_2021\CSC 403\Scrum Project\III\NewTetris\project\NewTetris Lib\bin\Debug\NewTetris Lib.dll
+E:\Users\jonmi\Documents\School\SPRING_2021\CSC 403\Scrum Project\III\NewTetris\project\NewTetris Lib\bin\Debug\NewTetris Lib.pdb
+E:\Users\jonmi\Documents\School\SPRING_2021\CSC 403\Scrum Project\III\NewTetris\project\NewTetris Lib\obj\Debug\NewTetris Lib.csproj.CoreCompileInputs.cache
+E:\Users\jonmi\Documents\School\SPRING_2021\CSC 403\Scrum Project\III\NewTetris\project\NewTetris Lib\obj\Debug\NewTetris Lib.dll
+E:\Users\jonmi\Documents\School\SPRING_2021\CSC 403\Scrum Project\III\NewTetris\project\NewTetris Lib\obj\Debug\NewTetris Lib.pdb
