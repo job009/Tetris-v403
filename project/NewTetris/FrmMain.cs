@@ -19,9 +19,9 @@ namespace NewTetris {
       Game.imgPiece = Resources.block_piece;
       game = new Game();
       Game.field = lblPlayingField;
+      Game.next = nextShapelbl;
       game.NextShape();
       Game.curShape = Game.nextShape;
-      Game.nextShape = null;
     }
 
     private void tmrCurrentPieceFall_Tick(object sender, EventArgs e) {

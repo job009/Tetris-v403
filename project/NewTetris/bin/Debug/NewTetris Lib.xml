@@ -48,6 +48,12 @@
             Used to place pieces and shapes inside of it.
             </summary>
         </member>
+        <member name="F:NewTetris_Lib.Game.next">
+            <summary>
+            Link to widget displaying the next shape to be loaded
+            Used to place pieces and shapes inside
+            </summary>
+        </member>
         <member name="F:NewTetris_Lib.Game.imgPiece">
             <summary>
             Holds the image for a piece that is used to 
@@ -112,6 +118,11 @@
             </summary>
         </member>
         <member name="F:NewTetris_Lib.Piece.pic">
+            <summary>
+            Control used to hold the image of the piece so GUI can display it
+            </summary>
+        </member>
+        <member name="F:NewTetris_Lib.Piece.pic2">
             <summary>
             Control used to hold the image of the piece so GUI can display it
             </summary>
