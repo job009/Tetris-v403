@@ -50,8 +50,8 @@
         </member>
         <member name="F:NewTetris_Lib.Game.next">
             <summary>
-            Link to widget displaying the next shape to be loaded
-            Used to place pieces and shapes inside
+            Link to widget displaying the playing field. 
+            Used to place pieces and shapes inside of it.
             </summary>
         </member>
         <member name="F:NewTetris_Lib.Game.imgPiece">
@@ -112,6 +112,11 @@
             Size of piece, i.e the width and height in pixels
             </summary>
         </member>
+        <member name="F:NewTetris_Lib.Piece.fieldPieces">
+            <summary>
+            Array of all the Piece instances, used to clear pictureBoxes from rows.
+            </summary>
+        </member>
         <member name="F:NewTetris_Lib.Piece.pos">
             <summary>
             Current position of piece
@@ -122,12 +127,7 @@
             Control used to hold the image of the piece so GUI can display it
             </summary>
         </member>
-        <member name="F:NewTetris_Lib.Piece.pic2">
-            <summary>
-            Control used to hold the image of the piece so GUI can display it
-            </summary>
-        </member>
-        <member name="M:NewTetris_Lib.Piece.#ctor(NewTetris_Lib.Position)">
+        <member name="M:NewTetris_Lib.Piece.#ctor(NewTetris_Lib.Position,System.Boolean)">
             <summary>
             typical explicit constructor
             </summary>
@@ -145,6 +145,14 @@
             position of the piece, meaning the visual representation
             of the piece will now match the coding position of the piece.
             </summary>
+        </member>
+        <member name="M:NewTetris_Lib.Piece.RemoveRowImg(System.Int32)">
+            <summary>
+            Called during the CheckClearAllRows method, clears the
+            PictureBoxes from the rows and drops the picture boxes of all
+            PictureBoxes above the row being delted down a single row.
+            </summary>
+            <param name="r"> r is the row being deleted </param>
         </member>
         <member name="M:NewTetris_Lib.Piece.CanMoveDown">
             <summary>
@@ -251,8 +259,7 @@
         <member name="M:NewTetris_Lib.PlayingField.CheckClearAllRows">
             <summary>
             Checks each row to see if any of them are filled and
-            needs to be cleared, then clears those rows - currently
-            unused and not implemented
+            needs to be cleared, then clears those rows
             </summary>
         </member>
         <member name="T:NewTetris_Lib.Position">
@@ -299,7 +306,7 @@
             Current orientation
             </summary>
         </member>
-        <member name="M:NewTetris_Lib.Shape.#ctor(NewTetris_Lib.Orientation[])">
+        <member name="M:NewTetris_Lib.Shape.#ctor(NewTetris_Lib.Orientation[],System.Boolean)">
             <summary>
             Default constructor
             </summary>
@@ -362,7 +369,7 @@
             Uses the Factory design pattern to generate shape objects
             </summary>
         </member>
-        <member name="M:NewTetris_Lib.ShapeFactory.MakeShape(NewTetris_Lib.ShapeType)">
+        <member name="M:NewTetris_Lib.ShapeFactory.MakeShape(NewTetris_Lib.ShapeType,System.Boolean)">
             <summary>
             Factory method that makes shape objects based on the shape type given
             </summary>

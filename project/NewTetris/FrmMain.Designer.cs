@@ -89,6 +89,7 @@
             this.nextShapelbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.nextShapelbl.AutoSize = true;
             this.nextShapelbl.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.nextShapelbl.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.nextShapelbl.Location = new System.Drawing.Point(206, 231);
             this.nextShapelbl.MinimumSize = new System.Drawing.Size(120, 120);
             this.nextShapelbl.Name = "nextShapelbl";
@@ -123,7 +124,7 @@
             this.Controls.Add(this.lblPlayingField);
             this.Name = "FrmMain";
             this.Text = "Tetris";
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmMain_KeyUp);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmMain_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
