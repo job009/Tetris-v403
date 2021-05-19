@@ -121,6 +121,14 @@ namespace NewTetris
             {
                 Game.curShape.RotateCW();
             }
+            else if (e.KeyCode == Keys.T)
+            {
+                Console.WriteLine("pressed");
+                tetrislbl.Visible = true;
+                tetrisSound.Play();
+                Thread.Sleep(1000);
+                tetrislbl.Visible = false;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
