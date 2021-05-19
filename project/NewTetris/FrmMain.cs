@@ -1,11 +1,16 @@
 ﻿using NewTetris.Properties;
 using NewTetris_Lib;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
+using System.Media;
+using System.Reflection;
+using System.Resources;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
@@ -16,17 +21,34 @@ namespace NewTetris
     {
         public Game game;
 
+        public static SoundPlayer clearSound = new SoundPlayer(Resources.clear);
+        public static SoundPlayer landSound = new SoundPlayer(Resources.fall);
+        public static SoundPlayer tetrisSound = new SoundPlayer(Resources.success);
+
+
         public FrmMain()
         {
+            var images = typeof(Properties.Resources)
+               .GetProperties(BindingFlags.Static | BindingFlags.NonPublic |
+                                                    BindingFlags.Public)
+               .Where(p => p.PropertyType == typeof(Bitmap) & p.Name.Contains("block"))
+               .Select(x => new { Name = x.Name, Image = x.GetValue(null, null) })
+               .ToList();
+
             InitializeComponent();
-            Game.imgPiece = Resources.block_piece;
+            var random = new Random();
+            int index = random.Next(images.Count);
+
+            Game.imgPiece = (Image)images[index].Image;
+            Console.WriteLine(images[index]);
+
+
             game = new Game();
             Game.field = lblPlayingField;
             Game.next = nextShapelbl;
             game.NextShape();
 
-
-        }
+    }
 
         private void tmrCurrentPieceFall_Tick(object sender, EventArgs e)
         {
@@ -34,10 +56,15 @@ namespace NewTetris
             {
                 if (!Game.curShape.TryMoveDown())
                 {
+                    landSound.Play();
                     Game.curShape.DissolveIntoField();
                     Game.nextShape.dest = true;
                     Game.curShape = Game.nextShape;
                     Game.nextShape = null;
+                    PlayingField.GetInstance().CheckClearAllRows();
+                    this.lblLevel.Text = Game.level.ToString();
+                    this.scoreIntlbl.Text = Game.score.ToString();
+
                 }
                 if (Game.nextShape == null)
                 {

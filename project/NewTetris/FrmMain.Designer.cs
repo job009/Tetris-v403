@@ -31,6 +31,9 @@
             this.tmrCurrentPieceFall = new System.Windows.Forms.Timer(this.components);
             this.nextShapelbl = new System.Windows.Forms.Label();
             this.title = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.scoreIntlbl = new System.Windows.Forms.Label();
+            this.tetrislbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblPlayingField
@@ -46,11 +49,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("TeXGyreAdventor", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label2.Location = new System.Drawing.Point(42, 188);
+            this.label2.Location = new System.Drawing.Point(64, 224);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 25);
+            this.label2.Size = new System.Drawing.Size(71, 32);
             this.label2.TabIndex = 8;
             this.label2.Text = "Level:";
             // 
@@ -58,23 +61,23 @@
             // 
             this.lblLevel.AutoSize = true;
             this.lblLevel.BackColor = System.Drawing.Color.Transparent;
-            this.lblLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLevel.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblLevel.Location = new System.Drawing.Point(132, 188);
+            this.lblLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLevel.ForeColor = System.Drawing.Color.White;
+            this.lblLevel.Location = new System.Drawing.Point(141, 224);
             this.lblLevel.Name = "lblLevel";
-            this.lblLevel.Size = new System.Drawing.Size(42, 25);
+            this.lblLevel.Size = new System.Drawing.Size(34, 37);
             this.lblLevel.TabIndex = 10;
-            this.lblLevel.Text = "XX";
+            this.lblLevel.Text = "1";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("TeXGyreAdventor", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label3.Location = new System.Drawing.Point(42, 247);
+            this.label3.Location = new System.Drawing.Point(64, 292);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(132, 25);
+            this.label3.Size = new System.Drawing.Size(128, 32);
             this.label3.TabIndex = 11;
             this.label3.Text = "Next Block:";
             // 
@@ -90,7 +93,7 @@
             this.nextShapelbl.AutoSize = true;
             this.nextShapelbl.BackColor = System.Drawing.SystemColors.ControlDark;
             this.nextShapelbl.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.nextShapelbl.Location = new System.Drawing.Point(206, 231);
+            this.nextShapelbl.Location = new System.Drawing.Point(208, 292);
             this.nextShapelbl.MinimumSize = new System.Drawing.Size(120, 120);
             this.nextShapelbl.Name = "nextShapelbl";
             this.nextShapelbl.Size = new System.Drawing.Size(120, 120);
@@ -108,6 +111,44 @@
             this.title.TabIndex = 13;
             this.title.Text = "Tetris v403";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("TeXGyreAdventor", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Salmon;
+            this.label1.Location = new System.Drawing.Point(141, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(108, 49);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Score";
+            // 
+            // scoreIntlbl
+            // 
+            this.scoreIntlbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.scoreIntlbl.BackColor = System.Drawing.Color.Transparent;
+            this.scoreIntlbl.Font = new System.Drawing.Font("TeXGyreAdventor", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scoreIntlbl.ForeColor = System.Drawing.Color.White;
+            this.scoreIntlbl.Location = new System.Drawing.Point(148, 79);
+            this.scoreIntlbl.Name = "scoreIntlbl";
+            this.scoreIntlbl.Size = new System.Drawing.Size(89, 55);
+            this.scoreIntlbl.TabIndex = 15;
+            this.scoreIntlbl.Text = "0";
+            this.scoreIntlbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tetrislbl
+            // 
+            this.tetrislbl.AutoSize = true;
+            this.tetrislbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tetrislbl.Font = new System.Drawing.Font("TeXGyreAdventor", 71.99999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tetrislbl.ForeColor = System.Drawing.Color.Red;
+            this.tetrislbl.Location = new System.Drawing.Point(451, 264);
+            this.tetrislbl.Name = "tetrislbl";
+            this.tetrislbl.Size = new System.Drawing.Size(352, 148);
+            this.tetrislbl.TabIndex = 16;
+            this.tetrislbl.Text = "TETRIS!";
+            this.tetrislbl.Visible = false;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -116,6 +157,9 @@
             this.BackgroundImage = global::NewTetris.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1183, 803);
+            this.Controls.Add(this.tetrislbl);
+            this.Controls.Add(this.scoreIntlbl);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.title);
             this.Controls.Add(this.nextShapelbl);
             this.Controls.Add(this.label3);
@@ -138,6 +182,9 @@
     private System.Windows.Forms.Timer tmrCurrentPieceFall;
         private System.Windows.Forms.Label nextShapelbl;
         private System.Windows.Forms.Label title;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label scoreIntlbl;
+        private System.Windows.Forms.Label tetrislbl;
     }
 }
 
