@@ -46,7 +46,6 @@ namespace NewTetris
             game = new Game();
             Game.field = lblPlayingField;
             Game.next = nextShapelbl;
-            game.NextShape();
 
     }
 
@@ -109,6 +108,12 @@ namespace NewTetris
             {
                 Game.curShape.RotateCW();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            game.NextShape();
+            button1.Visible = false;
         }
     }
 }
