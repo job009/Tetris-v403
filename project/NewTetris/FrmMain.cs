@@ -64,6 +64,19 @@ namespace NewTetris
                     this.lblLevel.Text = Game.level.ToString();
                     this.scoreIntlbl.Text = Game.score.ToString();
 
+                    var images = typeof(Properties.Resources)
+              .GetProperties(BindingFlags.Static | BindingFlags.NonPublic |
+                                                   BindingFlags.Public)
+              .Where(p => p.PropertyType == typeof(Bitmap) & p.Name.Contains("block"))
+              .Select(x => new { Name = x.Name, Image = x.GetValue(null, null) })
+              .ToList();
+
+                    var random = new Random();
+                    int index = random.Next(images.Count);
+
+                    Game.imgPiece = (Image)images[index].Image;
+                    Console.WriteLine(images[index]);
+
                 }
                 if (Game.nextShape == null)
                 {
