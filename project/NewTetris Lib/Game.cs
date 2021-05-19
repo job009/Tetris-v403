@@ -29,6 +29,8 @@ namespace NewTetris_Lib
         /// </summary>
         public static int score = 0;
 
+        public static int clearedLines = 0;
+
         /// <summary>
         /// Random object used to randomly select next shape
         /// to appear in level
@@ -80,7 +82,7 @@ namespace NewTetris_Lib
 
         public static void increaseScore(int linesCleared)
         {
-
+            clearedLines = linesCleared;
             totalLines += linesCleared;
             if (linesCleared == 1)
             {
@@ -99,11 +101,15 @@ namespace NewTetris_Lib
             {
                 score += 100 * level;
             }
-
-            if (totalLines % 10 == 0 && totalLines != 0)
+            if (totalLines >= 5)
             {
+                level = totalLines / 5;
                 level++;
             }
+            /*if (totalLines % 5 == 0 && totalLines != 0)
+            {
+                level = evel
+            }*/
         }
 
         /// <summary>

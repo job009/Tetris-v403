@@ -92,9 +92,10 @@ namespace NewTetris_Lib
                 }
                 else if (piece.pos.y / SIZE < r)
                 {
-
-                    piece.pos.y = piece.pos.y + SIZE;
-                    piece.UpdateImgPos();
+                    if(piece.pos.y != 1) {
+                        piece.pos.y = piece.pos.y + SIZE;
+                        piece.UpdateImgPos();
+                    }
 
                 }
             }
@@ -142,7 +143,6 @@ namespace NewTetris_Lib
             int r = pos.y / SIZE;
             int c = pos.x / SIZE;
             PlayingField.GetInstance().field[r, c] = 1;
-            PlayingField.GetInstance().CheckClearAllRows();
         }
 
         /// <summary>

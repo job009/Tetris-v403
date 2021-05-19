@@ -103,6 +103,7 @@ namespace NewTetris_Lib
                     if (IsEmpty(r, c) == true)
                     {
                         fullRow = false;
+                        
                     }
                 }
                 if (fullRow == true)
@@ -122,7 +123,6 @@ namespace NewTetris_Lib
             }
             if (linesCleared >= 1)
             {
-                Debug.WriteLine(linesCleared);
                 Game.increaseScore(linesCleared);
                 linesCleared = 0;
 
