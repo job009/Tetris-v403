@@ -42,7 +42,6 @@ namespace NewTetris
             Game.imgPiece = (Image)images[index].Image;
             Console.WriteLine(images[index]);
 
-
             game = new Game();
             Game.field = lblPlayingField;
             Game.next = nextShapelbl;
@@ -55,12 +54,34 @@ namespace NewTetris
             {
                 if (!Game.curShape.TryMoveDown())
                 {
+                    
                     landSound.Play();
                     Game.curShape.DissolveIntoField();
                     Game.nextShape.dest = true;
                     Game.curShape = Game.nextShape;
                     Game.nextShape = null;
                     PlayingField.GetInstance().CheckClearAllRows();
+                    //Game.level = 12;
+
+                    if (Game.clearedLines == 1 || Game.clearedLines == 2 || Game.clearedLines == 3)
+                    {
+                        clearSound.Play();
+                    }
+
+                    else if (Game.clearedLines == 4)
+                    {
+                        tetrisSound.Play();
+                    }
+                    Game.clearedLines = 0;
+
+                    if (Game.level <= 10)
+                    {
+                        this.tmrCurrentPieceFall.Interval = 500 - (Game.level * 40);
+                    }
+                    else if (Game.level >= 11)
+                    {
+                        this.tmrCurrentPieceFall.Interval = 60;
+                    }
                     this.lblLevel.Text = Game.level.ToString();
                     this.scoreIntlbl.Text = Game.score.ToString();
 
@@ -121,20 +142,13 @@ namespace NewTetris
             {
                 Game.curShape.RotateCW();
             }
-            else if (e.KeyCode == Keys.T)
-            {
-                Console.WriteLine("pressed");
-                tetrislbl.Visible = true;
-                tetrisSound.Play();
-                Thread.Sleep(1000);
-                tetrislbl.Visible = false;
-            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            game.NextShape();
+            button1.Enabled = false;
             button1.Visible = false;
+            game.NextShape();
         }
     }
 }
